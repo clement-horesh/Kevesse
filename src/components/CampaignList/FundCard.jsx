@@ -87,7 +87,7 @@ const FundCard = ({
               <Icons color="rgb(180, 188, 208)" size="16" iconType="Eth" />
             </span>
           </p>
-          <div className="badge text-[13px] text-stone-300 bg-custom-black px-4 py-2 rounded-[20px]">
+          <div className="badge text-[13px] text-stone-300 bg-[black] px-4 py-2 rounded-[20px]">
             {remainingDays} days
           </div>
         </div>
