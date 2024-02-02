@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-radial-gradient {
+  background-image: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 119, 198, 0.3), var(--transparent));
+}
+
+html{
+  background-color: rgb(23, 23, 25);
+}
+
+h1 {
+  background: linear-gradient(to right bottom, rgb(255, 255, 255) 30%, rgba(255, 255, 255, 0.35));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  width: fit-content;
+  font-size: 40px;
+  font-family: 'Inter';
+  letter-spacing: -0.1rem;
+}
+
+p {
+  font-size: 18px;
+  font-family: 'Inter';
+  font-weight: 300;
+  letter-spacing: 0rem;
+  color: rgb(247, 248, 248);
+}
+
+h4 {
+  font-size: 18px;
+  font-family: 'Inter';
+  font-weight: 300;
+  letter-spacing: 0rem;
+  color: rgb(180, 188, 208);
+}
+
+
