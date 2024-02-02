@@ -6,7 +6,7 @@ const Home = () => {
       <p className="font-bold text-[30px] md:text-[70px] lg:text-[80px] w-[1200px] leading-[0.95] tracking-custom text-left">
         <span className="text-[#4e38f3]">Funding future,</span> blockchain
         <br />
-        meets crowdfunding.
+        meets a test crowdfunding.
       </p>
 
       <div className="flex flex-row justify-between items-start mt-10 text-[#373D3F] text-left w-[1200px] mx-auto">
