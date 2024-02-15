@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Box from "../Box";
-import { ethers } from "ethers";
 import { Line } from "react-chartjs-2";
 import "chartjs-plugin-annotation"; // Import the plugin
 import Chart from "chart.js/auto";
@@ -48,7 +47,7 @@ const DonatorsLine = ({ state, donations, fetchDonations }) => {
       const date = new Date(donation.timestamp * 1000);
       const dateString = date.toLocaleDateString();
 
-      const amountEth = parseFloat(ethers.utils.formatEther(donation.amount));
+      const amountEth = 1;
       totalAmount += amountEth; // Accumulate total amount
       dataMap.set(dateString, totalAmount);
     });

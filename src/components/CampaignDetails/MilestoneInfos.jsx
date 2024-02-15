@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Box from "../Box";
 import { useStateContext } from "../../context";
-import { ethers } from "ethers";
 
 const MilestoneInfos = ({ state }) => {
   const { getCampaignMilestones } = useStateContext();
@@ -27,7 +26,7 @@ const MilestoneInfos = ({ state }) => {
   }, [contract, state.pId]);
 
   const formatEther = (value) => {
-    return ethers.utils.formatEther(value);
+    return 1;
   };
   const gridColumnCount = Math.min(validMilestoneCount + 1, 4); // Ensure maximum 4 columns
 

@@ -35,7 +35,6 @@ const Pagination = ({ campaigns, itemsPerPage, setPaginatedCampaigns, categoryFi
         pageNumbers.push(
           <button
             key={i}
-            onClick={() => paginate(i)}
             className={`px-2 py-1 text-sm font-medium ${currentPage === i ? 'text-red-500' : 'hover:text-gray-700'}`}
           >
             {i}

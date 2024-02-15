@@ -1,29 +1,152 @@
 import React from "react";
+import { GlowingStarsBackgroundCardPreview } from "../components/GlowingCard";
 
 const Home = () => {
   return (
-    <div className="relative mt-[80px] flex justify-center items-center lg:flex-col lg:justify-between  lg:pl-[0px] max-w-[1200px] mx-auto ">
-      <p className="font-bold text-[30px] md:text-[70px] lg:text-[80px] w-[1200px] leading-[0.95] tracking-custom text-left">
-        <span className="text-[#4e38f3]">Funding future,</span> blockchain
-        <br />
-        meets a test crowdfunding.
-      </p>
+    <div>
+      <div className="absolute top-0 h-[50vh] bg-[radial-gradient(ellipse_80%_50%_at_50%_-17%,rgba(72,155,240,0.3),rgba(0,0,0,0))] w-full "></div>
+      <div className="relative flex justify-center items-center h-[100vh] flex-col justify-between pl-[0px] max-w-[1900px] mx-auto">
+        <GlowingStarsBackgroundCardPreview />
 
-      <div className="flex flex-row justify-between items-start mt-10 text-[#373D3F] text-left w-[1200px] mx-auto">
-        <p className="w-1/2 pr-4">
-          Our platform uniquely blends the power of blockchain technology with
-          the dynamic world of crowdfunding. Here, investors and innovators
-          unite, forging a new path in financing. Dive into a seamless
-          experience where security meets opportunity. Your journey towards
-          reshaping the investment landscape begins here.
-        </p>
-        <p className="w-1/2 pl-4">
-          Our platform is designed to connect visionary projects with
-          forward-thinking investors. Experience the synergy of decentralized
-          finance and collective backing. Together, we're not just funding
-          projects, we're building futures.
-        </p>
+        {/* Approximating transparent to white with light gray to white gradient */}
+        <div className="h-screen flex flex-col justify-center items-center z-50">
+          <div className="py-1 px-4 backdrop-blur-2xl border border-opacity-10 border-white rounded-full cursor-pointer bg-white bg-opacity-10 hover:bg-opacity-20">
+            <p className="text-xs sm:text-sm">What is the concept</p>
+          </div>
+          <h1 className="text-4xl leading-tight mt-8 pb-[10px] text-center sm:text-5xl md:text-6xl lg:text-7xl">
+            Unleash the Future :<br />
+            Web3 Crowdfunding
+          </h1>
+          <h4 className="mt-5 text-center text-sm sm:text-base md:text-lg">
+            Revolutionize how ideas get funded. Streamline backing, monitor
+            <br />
+            developments, and foster innovation with ease.
+          </h4>
+        </div>
       </div>
+      <p>
+        This is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        This is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a texttextThis is a textThis is a textThis is
+        a textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a textThis is a textThis is a textThis is a
+        textThis is a textThis is a text
+      </p>
     </div>
   );
 };

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { logo } from "../../assets";
 import { Icons } from "../../assets";
-import { ConnectWallet } from "@thirdweb-dev/react";
 import CampaignHoverMenu from "./CampaignHoverMenu";
 
 const Logo = ({ styles, imgUrl, handleClick }) => (
@@ -116,11 +115,7 @@ const MenuFull = () => {
           </div>
           {/* Connect Wallet */}
           <div>
-            <ConnectWallet
-              modalSize="wide"
-              theme="dark"
-              switchToActiveChain={true}
-            />
+           
           </div>
         </div>
       </div>

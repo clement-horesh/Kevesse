@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ethers } from "ethers";
 
 // Components, utils
 import { FormField } from "../components";
@@ -66,21 +65,8 @@ const CreateCampaign = () => {
     if (step === 1 || step === 2) {
       setStep(step + 1);
     } else {
-      checkIfImage(form.image, async (exists) => {
-        if (exists) {
-          setIsLoading(true);
-          await createCampaign({
-            ...form,
-            target: ethers.utils.parseUnits(form.target, 18),
-          });
-          setIsLoading(false);
-          navigate("../campaign-done");
-        } else {
-          alert("Provide valid image URL");
-          setForm({ ...form, image: "" });
-        }
-        console.log(form);
-      });
+     
+      
     }
   };
 

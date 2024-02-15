@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Box from "../Box";
-import { ethers } from "ethers";
 
 const DonatorsList = ({ state, donations, fetchDonations }) => {
   const [sortMode, setSortMode] = useState("mostRecent");
@@ -113,7 +112,6 @@ const DonatorsList = ({ state, donations, fetchDonations }) => {
 
             return (
               <li key={index} style={donationItemStyle}>
-                <span>{ethers.utils.formatEther(donation.amount)} ETH</span>
                 <span>{timeSince(donation.timestamp)}</span>
               </li>
             );

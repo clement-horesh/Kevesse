@@ -1,11 +1,13 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import { CampaignDetails, CreateCampaign, CampaignsList, Home, Profile } from './pages';
 import { Menu } from './components';
-import { useLocation } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { StateContextProvider } from "./context";
+import './index.css';
 
 
-const App = () => {
+const MainComponent = () => {
   const location = useLocation();
 
   return (
@@ -21,6 +23,16 @@ const App = () => {
         </Routes>
       </div>
     </div>
+  );
+};
+
+const App = () => {
+  return (
+    <Router>
+      <StateContextProvider>
+        <MainComponent />
+      </StateContextProvider>
+    </Router>
   );
 }
 
