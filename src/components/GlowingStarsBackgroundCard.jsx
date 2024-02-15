@@ -1,22 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+
+import React, { useEffect, useState, useMemo } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "../utils/cn";
 
 export const GlowingStarsBackgroundCard = ({ className, children }) => {
-  const [mouseEnter, setMouseEnter] = useState(false);
-
   return (
-    <div
-      onMouseEnter={() => {
-        setMouseEnter(true);
-      }}
-      onMouseLeave={() => {
-        setMouseEnter(false);
-      }}
-      className={cn("w-[100%] ", className)}
-    >
+    <div className={cn("w-[100%] ", className)}>
       <div className="flex justify-center items-center">
-        <Illustration mouseEnter={mouseEnter} />
+        <Illustration />
       </div>
       <div className="">{children}</div>
     </div>
@@ -24,24 +15,34 @@ export const GlowingStarsBackgroundCard = ({ className, children }) => {
 };
 
 
-export const Illustration = ({ mouseEnter }) => {
-  const stars = 400;
-  const columns = 40;
+export const Illustration = () => {
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const isMobile = screenWidth <= 768;
+
+  const stars = isMobile ? 100 : 200; // 100 stars for mobile, 200 for larger screens
+  const columns = isMobile ? 10 : 20; // 10 columns for mobile, 20 for larger screens
 
   const [glowingStars, setGlowingStars] = useState([]);
 
-  const highlightedStars = useRef([]);
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      highlightedStars.current = Array.from({ length: 40 }, () =>
+      const highlightedStars = Array.from({ length: isMobile ? 15 : 30 }, () =>
         Math.floor(Math.random() * stars)
       );
-      setGlowingStars([...highlightedStars.current]);
-    }, 1000);
+      setGlowingStars([...highlightedStars]);
+    }, isMobile ? 3000 : 2000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isMobile, stars]);
 
   return (
     <div
@@ -55,17 +56,12 @@ export const Illustration = ({ mouseEnter }) => {
       {[...Array(stars)].map((_, starIdx) => {
         const isGlowing = glowingStars.includes(starIdx);
         const delay = (starIdx % 10) * 0.1;
-        const staticDelay = starIdx * 0.01;
         return (
           <div
-            key={`matrix-col-${starIdx}}`}
+            key={`matrix-col-${starIdx}`}
             className="relative flex items-center justify-center"
           >
-            <Star
-              isGlowing={mouseEnter ? true : isGlowing}
-              delay={mouseEnter ? staticDelay : delay}
-            />
-            {mouseEnter && <Glow delay={staticDelay} />}
+            <Star isGlowing={isGlowing} delay={delay} />
             <AnimatePresence mode="wait">
               {isGlowing && <Glow delay={delay} />}
             </AnimatePresence>
@@ -79,7 +75,6 @@ export const Illustration = ({ mouseEnter }) => {
 const Star = ({ isGlowing, delay }) => {
   return (
     <motion.div
-      key={delay}
       initial={{
         scale: 1,
       }}
@@ -92,7 +87,7 @@ const Star = ({ isGlowing, delay }) => {
         ease: "easeInOut",
         delay: delay,
       }}
-      className={cn("bg-[#666] h-[1.5px] w-[1.5px] rounded-full relative ")}
+      className="bg-[#666] h-[1.5px] w-[1.5px] rounded-full relative"
     ></motion.div>
   );
 };
@@ -114,7 +109,7 @@ const Glow = ({ delay }) => {
       exit={{
         opacity: 0,
       }}
-      className="absolute left-1/2 -translate-x-1/2  h-[8px] w-[8px] rounded-full bg-blue-500 blur-[2px] shadow-2xl shadow-blue-400"
+      className="absolute left-1/2 -translate-x-1/2 h-[8px] w-[8px] rounded-full bg-blue-500 blur-[2px] shadow-2xl shadow-blue-400"
     />
   );
 };
