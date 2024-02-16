@@ -10,7 +10,7 @@ const Home = () => {
         <GlowingStarsBackgroundCardPreview />
 
         {/* Approximating transparent to white with light gray to white gradient */}
-        <div className="h-screen flex flex-col justify-center items-center z-50">
+        <div className="h-fit-content mt-[150px] flex flex-col justify-center items-center z-50">
           <div className="py-1 px-4 backdrop-blur-2xl border border-opacity-10 border-white rounded-full cursor-pointer bg-white bg-opacity-10 hover:bg-opacity-20">
             <p className="text-xs sm:text-sm">What is the concept</p>
           </div>
@@ -18,7 +18,7 @@ const Home = () => {
             Unleash the Future :<br/>
             Web3 Crowdfunding
           </h1>
-          <h4 className="mt-[15px] max-w-[400px] sm:max-w-[630px] text-sm px-[20px] text-center text-sm sm:text-base sm:text-xl lg:text-[22px]">
+          <h4 className="mt-[15px] max-w-[400px] sm:max-w-[630px] text-sm px-[20px] text-center text-base sm:text-base sm:text-xl lg:text-[22px]">
             Revolutionize how ideas get funded. Streamline backing, monitor
             
             developments, and foster innovation with ease.

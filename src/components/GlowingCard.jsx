@@ -1,8 +1,6 @@
 import React from "react";
 import {
   GlowingStarsBackgroundCard,
-  GlowingStarsDescription,
-  GlowingStarsTitle,
 } from "./GlowingStarsBackgroundCard";
 
 export function GlowingStarsBackgroundCardPreview() {

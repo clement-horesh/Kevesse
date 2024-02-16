@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { logo } from "../../assets";
 import { Icons } from "../../assets";
-import CampaignHoverMenu from "./CampaignHoverMenu";
 
 const Logo = ({ styles, imgUrl, handleClick }) => (
   <div
@@ -15,108 +14,94 @@ const Logo = ({ styles, imgUrl, handleClick }) => (
 
 const MenuMobile = () => {
   const navigate = useNavigate();
-  const [isActive, setIsActive] = useState("dashboard");
-  const [hoveredLink, setHoveredLink] = useState(null);
-  const [leaveTimer, setLeaveTimer] = useState(null);
+  const [isActive, setIsActive] = useState(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  useEffect(() => {
-    return () => {
-      if (leaveTimer) {
-        clearTimeout(leaveTimer);
-      }
-    };
-  }, [leaveTimer]);
-
-  const handleMouseEnter = (linkName) => {
-    if (leaveTimer) {
-      clearTimeout(leaveTimer);
-      setLeaveTimer(null);
-    }
-    setHoveredLink(linkName);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
-
-  const handleMouseLeave = () => {
-    const timer = setTimeout(() => {
-      setHoveredLink(null);
-    }, 200);
-    setLeaveTimer(timer);
-  };
-
-  const handleCampaignClick = () => {
-    setIsActive("Campaigns");
-    navigate("/campaigns-list");
-  };
-
-  const CAMPAIGN_LINK_NAME = "Campaigns";
 
   return (
     <div>
       <style>{`
+        .menu-full-screen {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0, 0, 0, 0.9);
+          z-index: 999;
+          display: flex;
+          flex-direction: column;
+          justify-content: start;
+          align-items: flex-start;
+          padding-top: 20px;
+          transform: ${isMenuOpen ? "translateY(0)" : "translateY(-100%)"};
+          transition: transform 0.3s ease;
+        }
         .icon-container {
           transition: transform 0.2s ease-in-out;
         }
-        .icon-rotate {
-          transform: rotate(180deg);
-        }
       `}</style>
       {/* Background Blur */}
-      <div className="fixed top-0 left-0 w-full backdrop-blur-2xl h-[55px] z-[9999]"></div>
+      <div className="fixed top-0 left-0 w-full backdrop-blur-2xl h-[55px] z-[9998]"></div>
       {/* Menu */}
-      <div className="fixed  px-[20px] top-0 left-0 w-full border-b-[1px] border-opacity-10 border-white z-[9999]">
+      <div className="fixed px-[20px] top-0 left-0 w-full border-b-[1px] border-opacity-10 border-white z-[9999]">
         <div className="flex justify-between items-center flex-row sticky max-w-[1900px] mx-auto h-[55px]">
           {/* Logo */}
-          <div className="flex">
-            <Link to="/" onClick={() => setIsActive(null)}>
-              <Logo styles="h-full w-[80px] rounded-[0]" imgUrl={logo} />
-            </Link>
-            {/* Links */}
-            <div className="flex flex-row justify-center items-center ml-4 gap-2 relative">
-              {/* Campaigns Link */}
-              <div
-                className={`cursor-pointer transition-all duration-200 ease-in-out pl-2 pr-1 py-1 rounded ${
-                  isActive === CAMPAIGN_LINK_NAME ||
-                  hoveredLink === CAMPAIGN_LINK_NAME
-                    ? "text-white bg-zinc-500 bg-opacity-20"
-                    : "text-white bg-transparent"
-                } hover:bg-white hover:bg-opacity-10`}
-                onClick={handleCampaignClick}
-                onMouseEnter={() => handleMouseEnter(CAMPAIGN_LINK_NAME)}
-                onMouseLeave={handleMouseLeave}
-              >
-                <div className="flex items-center">
-                  Campaigns
-                  <div className={`ml-[3px] mt-[3px] icon-container ${hoveredLink === CAMPAIGN_LINK_NAME ? 'icon-rotate' : ''}`}>
-                    <Icons color="rgb(180, 188, 208)" size="17" iconType="chevronDown" />
-                  </div>
-                </div>
-              </div>
-
-              {/* How It Works Link */}
-              <Link
-                to="/how-it-works"
-                className={`cursor-pointer transition-all duration-200 ease-in-out px-2 py-1 rounded ${
-                  isActive === "How It Works"
-                    ? "text-white bg-zinc-500 bg-opacity-20"
-                    : "text-white bg-transparent"
-                } hover:bg-white hover:bg-opacity-10`}
-                onClick={() => setIsActive("How It Works")}
-              >
-                How It Works
-              </Link>
-
-              {/* DIV HOVER CAMPAIGN */}
-              {hoveredLink === CAMPAIGN_LINK_NAME && (
-                <CampaignHoverMenu
-                  handleMouseEnter={() => handleMouseEnter(CAMPAIGN_LINK_NAME)}
-                  handleMouseLeave={handleMouseLeave}
-                />
-              )}
-            </div>
+          <Link to="/" onClick={() => setIsActive(null)}>
+            <Logo styles="h-full w-[80px] rounded-[0]" imgUrl={logo} />
+          </Link>
+          {/* Hamburger Icon - Change to gamepad when menu is open */}
+          <div
+            className="flex items-center justify-end cursor-pointer z-[99]"
+            onClick={toggleMenu}
+          >
+            <Icons iconType={isMenuOpen ? "gamepad" : "All"} size="24" color="white" />
           </div>
-          {/* Connect Wallet */}
-          <div>
-          
+        </div>
+      </div>
+      {/* Full Screen Menu */}
+      <div className={`menu-full-screen ${isMenuOpen ? "" : "hidden"}`}>
+        {/* Close Icon - Also set to gamepad for consistency when menu is open */}
+        <div className="fixed px-[20px] top-0 left-0 w-full border-b-[1px] border-opacity-10 border-white z-[9997]">
+          <div className="flex justify-between items-center flex-row sticky max-w-[1900px] mx-auto h-[55px]">
+            <Icons iconType="gamepad" size="24" color="white" />
           </div>
+        </div>
+        <div className="mt-[50px] flex flex-col">
+          {/* Links */}
+          <Link
+            to="/"
+            className="px-[20px] py-[10px] text-white"
+            onClick={() => {
+              setIsMenuOpen(false);
+              setIsActive(null);
+            }}
+          >
+            Home
+          </Link>
+          <Link
+            to="/campaigns-list"
+            className="px-[20px] py-[10px] text-white"
+            onClick={() => {
+              setIsMenuOpen(false);
+              setIsActive("Campaigns");
+            }}
+          >
+            Campaigns
+          </Link>
+          <Link
+            to="/how-it-works"
+            className="px-[20px] py-[10px] text-white"
+            onClick={() => {
+              setIsMenuOpen(false);
+              setIsActive("How It Works");
+            }}
+          >
+            How It Works
+          </Link>
         </div>
       </div>
     </div>
