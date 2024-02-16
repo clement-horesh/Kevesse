@@ -1,5 +1,6 @@
 import React from "react";
 import { GlowingStarsBackgroundCardPreview } from "../components/GlowingCard";
+import { Icons } from "../assets";
 
 const Home = () => {
   return (
@@ -13,15 +14,18 @@ const Home = () => {
           <div className="py-1 px-4 backdrop-blur-2xl border border-opacity-10 border-white rounded-full cursor-pointer bg-white bg-opacity-10 hover:bg-opacity-20">
             <p className="text-xs sm:text-sm">What is the concept</p>
           </div>
-          <h1 className="text-4xl leading-tight mt-8 pb-[10px] text-center sm:text-5xl md:text-6xl lg:text-7xl">
-            Unleash the Future :<br />
+          <h1 className="text-3xl font-medium leading-tight mt-8 pb-[10px] text-center xs:text-4xl s:text-5xl sm:text-6xl md:text-7xl lg:text-[5rem]">
+            Unleash the Future :<br/>
             Web3 Crowdfunding
           </h1>
-          <h4 className="mt-5 text-center text-sm sm:text-base md:text-lg">
+          <h4 className="mt-[15px] max-w-[400px] sm:max-w-[630px] text-sm px-[20px] text-center text-sm sm:text-base sm:text-xl lg:text-[22px]">
             Revolutionize how ideas get funded. Streamline backing, monitor
-            <br />
+            
             developments, and foster innovation with ease.
           </h4>
+          <div>
+            <button class="flex items-center	text-white mt-8 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br dark:focus:ring-blue-800 font-medium rounded-xl text-xs sm:text-sm pl-5 pr-3 py-2.5 text-center me-2 mb-2">Participate in a project <div className="ml-[3px] pt-[2px]"><Icons  color="rgb(255, 255, 255)" size="17" iconType="chevronRight"/></div></button>
+          </div>
         </div>
       </div>
       <p>
