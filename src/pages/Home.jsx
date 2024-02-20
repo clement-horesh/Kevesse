@@ -1,12 +1,13 @@
 import React from "react";
 import { GlowingStarsBackgroundCardPreview } from "../components/GlowingCard";
 import { Icons } from "../assets";
+import { HeroScrollDemo } from "../components/Ipad";
 
 const Home = () => {
   return (
     <div>
       <div className="absolute top-0 h-[50vh] bg-[radial-gradient(ellipse_80%_50%_at_50%_-17%,rgba(72,155,240,0.3),rgba(0,0,0,0))] w-full "></div>
-      <div className="relative flex justify-center items-center h-[100vh] flex-col justify-between pl-[0px] max-w-[1900px] mx-auto">
+      <div className="relative flex justify-center items-center  flex-col justify-between pl-[0px] max-w-[1900px] mx-auto">
         <GlowingStarsBackgroundCardPreview />
 
         {/* Approximating transparent to white with light gray to white gradient */}
@@ -27,7 +28,11 @@ const Home = () => {
             <button class="flex items-center	text-white mt-8 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br dark:focus:ring-blue-800 font-medium rounded-xl text-xs sm:text-sm pl-5 pr-3 py-2.5 text-center me-2 mb-2">Participate in a project <div className="ml-[3px] pt-[2px]"><Icons  color="rgb(255, 255, 255)" size="17" iconType="chevronRight"/></div></button>
           </div>
         </div>
+
       </div>
+      <HeroScrollDemo />
+
+
       <p>
         This is a textThis is a textThis is a textThis is a textThis is a
         textThis is a textThis is a textThis is a textThis is a textThis is a
