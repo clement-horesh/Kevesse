@@ -13,7 +13,7 @@ const Home = () => {
         {/* Approximating transparent to white with light gray to white gradient */}
         <div className="h-fit-content mt-[150px] flex flex-col justify-center items-center z-50">
           <div className="py-1 px-4 backdrop-blur-2xl border border-opacity-10 border-white rounded-full cursor-pointer bg-white bg-opacity-10 hover:bg-opacity-20">
-            <p className="text-xs sm:text-sm">What is the concept</p>
+            <p className="text-xs sm:text-sm">What is the concept Romeo ?</p>
           </div>
           <h1 className="text-3xl font-medium leading-tight mt-8 pb-[10px] text-center xs:text-4xl s:text-5xl sm:text-6xl md:text-7xl lg:text-[5rem]">
             Unleash the Future :<br/>
