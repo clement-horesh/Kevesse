@@ -99,12 +99,12 @@ const CampaignHoverMenu = ({ handleMouseEnter, handleMouseLeave }) => {
         </div>
         <div className="flex flex-col">
           <div
-            className="   mb-2 rounded-lg bg-cover bg-no-repeat bg-right	"
+            className="mb-2 rounded-lg bg-cover hover:filter-none grayscale bg-no-repeat bg-right	"
             style={{ backgroundImage: `url(${bgmenu1})` }}
           >
             <div
               onClick={() => navigate("/create-campaign")} // Add this line
-              className="group flex flex-col rounded-lg border-[1px] border-opacity-10 hover:cursor-pointer hover:border-opacity-20 border-white hover:bg-white/10 bg-white/2 hover:backdrop-grayscale-[30%] backdrop-grayscale-[100%]	p-[9px] h-[115px] w-[300px]"
+              className="group flex flex-col rounded-lg border-[1px] border-opacity-10 hover:cursor-pointer hover:border-opacity-20 border-white hover:bg-white/10 bg-white/2 	p-[9px] h-[115px] w-[300px]"
             >
               <p className="text-[14px]">Create a campaign</p>
               <span className="grow"></span>
@@ -116,10 +116,10 @@ const CampaignHoverMenu = ({ handleMouseEnter, handleMouseLeave }) => {
             </div>
           </div>
           <div
-            className="   mb-2 rounded-lg bg-cover bg-no-repeat bg-right	"
+            className="   mb-2 rounded-lg bg-cover bg-no-repeat hover:filter-none grayscale bg-right	"
             style={{ backgroundImage: `url(${bgmenu2})` }}
           >
-            <div className="group flex flex-col rounded-lg border-[1px] border-opacity-10 hover:cursor-pointer hover:border-opacity-20 border-white hover:bg-white/10 bg-white/2 hover:backdrop-grayscale-[30%] backdrop-grayscale-[100%]	p-[9px] h-[115px] w-[300px]">
+            <div className="group flex flex-col rounded-lg border-[1px] border-opacity-10 hover:cursor-pointer hover:border-opacity-20 border-white hover:bg-white/10 bg-white/2	p-[9px] h-[115px] w-[300px]">
               <p className="text-[14px]">My Campaigns</p>
               <span className="grow"></span>
               <h4 className="group-hover:text-[#d2d2d2] text-[12px]">

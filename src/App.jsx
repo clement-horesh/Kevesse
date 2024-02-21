@@ -11,7 +11,7 @@ const MainComponent = () => {
   const location = useLocation();
 
   return (
-    <div className="relative sm:-8 bg-zinc-900 min-h-screen flex flex-row">
+    <div className="relative sm:-8 bg-[#060917] min-h-screen flex flex-row">
       <div className="flex-1 w-full mx-auto">
         {location.pathname !== "/create-campaign" && <Menu />}
         <Routes>

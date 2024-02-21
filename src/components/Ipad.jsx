@@ -4,7 +4,7 @@ import { ContainerScroll } from "./ContainerScroll";
 
 export function HeroScrollDemo() {
   return (
-    <div className="flex mt-[-350px] md:mt-[-250px] lg:mt-[-230px] flex-col overflow-hidden">
+    <div className="flex mt-[-350px] md:mt-[-250px] lg:mt-[-300px] flex-col overflow-hidden">
       <ContainerScroll
         users={users}
         titleComponent={""
