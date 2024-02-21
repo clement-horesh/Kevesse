@@ -31,7 +31,7 @@ const Home = () => {
 
       </div>
       <HeroScrollDemo />
-      <h1 className="text-center w-full mt-[-50px] mb-[1000px]">Discover new campaigns on a daily baisis</h1>
+      <h1 className="text-center w-full mt-[-50px] mb-[1000px]">Discover new campaigns on a daily coucouc baisis</h1>
 
     </div>
   );
