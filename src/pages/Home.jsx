@@ -6,7 +6,7 @@ import { HeroScrollDemo } from "../components/Ipad";
 const Home = () => {
   return (
     <div className="max-w-[1900px] mx-auto">
-      <div className="absolute top-0 h-[50vh] bg-[radial-gradient(ellipse_80%_50%_at_50%_-17%,rgba(72,155,240,0.3),rgba(0,0,0,0))] w-full "></div>
+      <div className="absolute left-0 top-0 h-[50vh] bg-[radial-gradient(ellipse_80%_50%_at_50%_-17%,rgba(72,155,240,0.3),rgba(0,0,0,0))] w-full "></div>
       <div className="relative flex justify-center items-center  flex-col justify-between pl-[0px] max-w-[1900px] mx-auto">
         <GlowingStarsBackgroundCardPreview />
 

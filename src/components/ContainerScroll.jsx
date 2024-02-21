@@ -2,7 +2,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 
-export const ContainerScroll = ({ users, titleComponent }) => {
+export const ContainerScroll = ({}) => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -60,10 +60,10 @@ export const Card = ({ rotate, scale, translate }) => {
         boxShadow:
           "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
       }}
-      className="max-w-5xl mx-auto h-[30rem] md:h-[40rem] w-full border-[1px] border-[#6C6C6C] p-5 bg-[#222222] rounded-[30px] shadow-2xl"
+      className="max-w-5xl mx-auto h-[30rem] md:h-[40rem] w-full border-[1px] border-[#6C6C6C] p-5 bg-[#222222] rounded-[30px] shadow-2xl "
     >
       <div className="bg-gray-900 h-full w-full rounded-2xl grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 overflow-hidden p-4">
-      
+        <p>coucou</p>
       </div>
     </motion.div>
   );
