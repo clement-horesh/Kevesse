@@ -1,51 +1,49 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { loader } from "../../assets";
-import FundCard from "./FundCard";
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { db } from "../../firebase";
+import FundCard from "./FundCard"; // Adjust the import path as necessary
 
-const DisplayCampaigns = ({
-  isLoading,
-  campaigns,
-  initialCategoryFilter = "All",
-}) => {
-  const navigate = useNavigate();
-  const [currentCampaigns, setCurrentCampaigns] = useState([]);
+const DisplayCampaigns = ({ categoryFilter = "All" }) => {
+  const [campaigns, setCampaigns] = useState([]);
 
   useEffect(() => {
-    setCurrentCampaigns(campaigns);
-  }, [campaigns]);
+    async function getCampaigns() {
+      let q;
+      if (categoryFilter !== "All") {
+        q = query(
+          collection(db, "Campaign"),
+          where("Category", "==", categoryFilter)
+        );
+      } else {
+        q = query(collection(db, "Campaign"));
+      }
 
-  const handleNavigate = (campaign) => {
-    navigate(`/campaign-details/${campaign.title}`, { state: campaign });
-  };
+      const campaignSnapshot = await getDocs(q);
+      const campaignList = campaignSnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setCampaigns(campaignList);
+    }
+
+    getCampaigns();
+  }, [categoryFilter]);
 
   return (
-    <div>
-      {/* Campaigns display */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-x-4 mt-4 gap-y-4">
-        {isLoading ? (
-          // Show loader when loading
-          <img
-            src={loader}
-            alt="loader"
-            className="w-[100px] h-[100px] object-contain"
-          />
-        ) : currentCampaigns.length === 0 ? (
-          // Show no campaigns message if not loading and no campaigns
-          <p className="font-epilogue font-semibold text-[14px] leading-[30px] text-[black]">
-            No campaigns available
-          </p>
-        ) : (
-          // Show campaigns
-          currentCampaigns.map((campaign) => (
-            <FundCard
-              key={campaign.pId}
-              {...campaign}
-              handleClick={() => handleNavigate(campaign)}
-            />
-          ))
-        )}
-      </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 pt-[20px]">
+      {campaigns.map((campaign) => (
+        <FundCard
+          key={campaign.id}
+          title={campaign.Title}
+          description={campaign.description}
+          category={campaign.Category}
+          target={campaign.Target}
+          deadline={campaign.Deadline} // Ensure your campaign data includes a Deadline
+          amountCollected={campaign.AmountCollected} // Ensure your campaign data includes AmountCollected
+          image={campaign.Image}
+          handleClick={() => console.log(`Clicked on ${campaign.Title}`)} // Example click handler
+        />
+      ))}
     </div>
   );
 };

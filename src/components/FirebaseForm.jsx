@@ -3,7 +3,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { db, storage } from "../firebase"
 
-const CreateCampaign = () => {
+const CampaignForm = () => {
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -120,4 +120,4 @@ const CreateCampaign = () => {
   );
 };
 
-export default CreateCampaign;
+export default CampaignForm;

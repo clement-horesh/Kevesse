@@ -16,23 +16,31 @@ const Home = () => {
             <p className="text-xs sm:text-sm">What is the concept Romeo ?</p>
           </div>
           <h1 className="text-3xl font-medium leading-tight mt-8 pb-[10px] text-center xs:text-4xl s:text-5xl sm:text-6xl md:text-7xl lg:text-[5rem]">
-            Unleash the Future :<br/>
+            Unleash the Future :<br />
             Web3 Crowdfunding
           </h1>
           <h4 className="mt-[15px] max-w-[400px] sm:max-w-[630px] text-sm px-[20px] text-center text-base sm:text-base sm:text-xl lg:text-[22px]">
             Revolutionize how ideas get funded. Streamline backing, monitor
-            
             developments, and foster innovation with ease.
           </h4>
           <div>
-            <button class="flex items-center	text-white mt-8 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br dark:focus:ring-blue-800 font-medium rounded-xl text-xs sm:text-sm pl-5 pr-3 py-2.5 text-center me-2 mb-2">Participate in a project <div className="ml-[3px] pt-[2px]"><Icons  color="rgb(255, 255, 255)" size="17" iconType="chevronRight"/></div></button>
+            <button class="flex items-center	text-white mt-8 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br dark:focus:ring-blue-800 font-medium rounded-xl text-xs sm:text-sm pl-5 pr-3 py-2.5 text-center me-2 mb-2">
+              Participate in a project{" "}
+              <div className="ml-[3px] pt-[0px]">
+                <Icons
+                  color="rgb(255, 255, 255)"
+                  size="17"
+                  iconType="chevronRight"
+                />
+              </div>
+            </button>
           </div>
         </div>
-
       </div>
       <HeroScrollDemo />
-      <h1 className="text-center w-full mt-[-50px] mb-[1000px]">Discover new campaigns on a daily coucouc baisis</h1>
-
+      <h1 className="text-center w-full mt-[-50px] mb-[1000px]">
+        Discover new campaigns on a daily coucouc baisis
+      </h1>
     </div>
   );
 };

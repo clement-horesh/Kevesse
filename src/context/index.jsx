@@ -1,34 +1,19 @@
 import React, { useContext, createContext } from "react";
 
-
 const StateContext = createContext();
 
 export const StateContextProvider = ({ children }) => {
-  
-  
-  const getCampaignMilestones = async (pId) => {
-   
-  };
-  const getAllCampaignUpdates = async (pId) => {
-   
-  };
-  const getAllDonationsForCampaign = async (pId) => {
-   
-  };
+  const getCampaignMilestones = async (pId) => {};
+  const getAllCampaignUpdates = async (pId) => {};
+  const getAllDonationsForCampaign = async (pId) => {};
   const { mutateAsync: donate } = 1;
   const address = 1;
   const connect = 1;
-  const handleDonate = async (campaignId, amount) => {
- 
-  };
+  const handleDonate = async (campaignId, amount) => {};
 
-  const publishCampaign = async (form) => {
-   
-  };
+  const publishCampaign = async (form) => {};
 
-  const getCampaigns = async () => {
-   
-  };
+  const getCampaigns = async () => {};
 
   return (
     <StateContext.Provider

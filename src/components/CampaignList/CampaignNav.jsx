@@ -17,7 +17,7 @@ function CategoryButton({ category, setCategoryFilter, currentFilter }) {
 
 const CampaignNav = ({ categoryFilter, setCategoryFilter }) => {
   return (
-    <nav className="backdrop-blur-l border-b-[0.1px] mx-auto border-opacity-10 border-white">
+    <nav className="backdrop-blur-l border-b-[0.1px] mx-auto border-opacity-10 border-white max-w-[1900px]">
         <div className="max-w-[100%] mx-auto">
           <div className="flex items-center justify-between h-12">
             <div className="flex items-baseline space-x-2">
